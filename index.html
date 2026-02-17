@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>9Eスカウト｜営業職特化のスカウト型転職サービス</title>
+<meta name="description" content="営業職特化のスカウト型転職サービス。企業からの指名スカウト×プロのエージェント伴走で、年収交渉に強い転職を実現。CS・IS・SaaS営業・CA職の方へ。完全無料。">
+<meta property="og:title" content="9Eスカウト｜営業職特化のスカウト型転職サービス">
+<meta property="og:description" content="企業からの指名スカウト×プロのエージェント伴走で、年収交渉に強い転職を実現。完全無料。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',sans-serif;color:#1a1a2e;background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+
+/* ===== HEADER ===== */
+.header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e8e8}
+.header__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.header__logo img{height:36px;width:auto}
+.header__menu{list-style:none}
+.header__menu--carousel a{font-size:13px;color:#333;border:1px solid #ccc;border-radius:4px;padding:6px 14px}
+
+/* ===== FV ===== */
+.c-structure{position:relative}
+.c-structure__upper{position:relative}
+.c-structure__upper h1{display:block}
+.fv{background:linear-gradient(135deg,#0f3460 0%,#16213e 100%);color:#fff;padding:40px 20px 24px;text-align:center}
+.fv__sub{font-size:12px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:.08em;margin-bottom:10px}
+.fv__main{font-size:24px;font-weight:900;line-height:1.5;margin-bottom:8px}
+.fv__main em{font-style:normal;color:#e94560}
+.fv__copy{font-size:13px;font-weight:500;color:rgba(255,255,255,.8);margin-bottom:20px;line-height:1.7}
+.fv__badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.fv__badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:8px 10px;text-align:center;min-width:76px}
+.fv__badge-num{font-family:'Jost',sans-serif;font-size:22px;font-weight:600;color:#e94560;display:block;line-height:1.2}
+.fv__badge-num small{font-size:13px}
+.fv__badge-label{font-size:9px;color:rgba(255,255,255,.6);display:block;margin-top:2px}
+
+/* ===== FLOW DIAGRAM ===== */
+.flow{max-width:400px;margin:32px auto 0;padding:0 12px}
+.flow__row{display:flex;align-items:center;gap:0}
+.flow__node{flex:1;text-align:center}
+.flow__circle{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 6px}
+.flow__circle--corp{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12)}
+.flow__circle--agent{background:rgba(233,69,96,.1);border:2px solid #e94560;box-shadow:0 0 16px rgba(233,69,96,.2)}
+.flow__circle--you{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12)}
+.flow__name{font-size:10px;font-weight:700;color:#fff;margin-bottom:1px}
+.flow__note{font-size:8px;color:rgba(255,255,255,.4);line-height:1.3}
+.flow__arrow{flex:0 0 28px;text-align:center;padding-bottom:24px}
+.flow__arrow svg{display:block;margin:0 auto}
+.flow__cap{display:block;font-size:7px;font-weight:700;letter-spacing:.03em;margin-top:3px}
+.flow__cap--muted{color:rgba(255,255,255,.25)}
+.flow__cap--accent{color:#e94560}
+.flow__footer{margin-top:12px;padding:6px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;gap:6px}
+.flow__footer-text{font-size:9px;font-weight:600;color:rgba(255,255,255,.5)}.flow__footer-text em{font-style:normal;color:#e94560}
+
+/* ===== FORM ===== */
+.karousel{max-width:520px;margin:-20px auto 0;padding:0 20px;position:relative;z-index:10}
+.karousel__gauge{height:6px;background:#e8e8e8;border-radius:3px;margin-bottom:12px;overflow:hidden}
+.karousel__gauge span{display:block;height:100%;background:linear-gradient(90deg,#0f3460,#e94560);border-radius:3px;transition:width .4s ease-out}
+.karousel__step-info{text-align:center;font-size:12px;color:#888;margin-bottom:16px}
+.item{display:none;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:28px 24px;min-height:280px}
+.item.active{display:block}
+.item__title{font-size:15px;font-weight:700;color:#16213e;margin-bottom:16px;line-height:1.6}
+.haveto{display:inline-block;background:#e94560;color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
+.wpcf7-list-item{display:block;margin-bottom:8px}
+.wpcf7-list-item label{display:block;background:#f8f9fa;border:2px solid #e8e8e8;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s,background .2s}
+.wpcf7-list-item label:hover{border-color:#0f3460;background:#f0f4ff}
+.wpcf7-list-item label.selected{border-color:#0f3460;background:#eef2ff}
+.wpcf7-list-item input[type="radio"],.wpcf7-list-item input[type="checkbox"]{margin-right:8px;accent-color:#0f3460}
+.free__answer-hide{display:none}
+.item__flex{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.item__flex span:last-child{font-size:14px;font-weight:500;white-space:nowrap}
+input[type="text"],input[type="tel"],input[type="email"],input[type="number"]{width:100%;border:2px solid #e8e8e8;border-radius:8px;padding:12px 14px;font-size:15px;font-family:inherit;transition:border-color .2s;outline:none}
+input:focus{border-color:#0f3460}
+.name,.number,.text,.text_edge,.tel{width:100%}
+
+/* ===== NAV ===== */
+.owl-nav-alt{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+.owl-prev{background:none;border:none;color:#888;font-size:14px;cursor:pointer;padding:8px 0;display:none}
+.owl-prev:hover{color:#333}
+.owl-next{background:#0f3460;color:#fff;border:none;border-radius:50px;padding:12px 32px;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s;margin-left:auto;display:none}
+.owl-next:hover{background:#1a4a8a}
+
+/* ===== SUBMIT ===== */
+.submit-btn{display:none;text-align:center;margin-top:20px}
+.submit-btn button{width:100%;background:#e94560;color:#fff;border:none;border-radius:50px;padding:16px 24px;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 4px 16px rgba(233,69,96,.3);transition:background .2s,transform .2s}
+.submit-btn button:hover{background:#d63851;transform:translateY(-1px)}
+.submit-btn__note{font-size:10px;color:#999;margin-top:8px}
+
+/* ===== FOOTER ===== */
+.footer-lp{margin-top:40px}
+.footer-lp-bottom{text-align:center;padding:24px 20px;border-top:1px solid #e8e8e8}
+.footer-lp-bottom__links{margin-bottom:8px}
+.footer-lp-bottom__links button{background:none;border:none;font-size:12px;color:#666;cursor:pointer;margin:0 8px}
+.footer-lp-bottom__authority{font-size:11px;color:#999}
+
+/* ===== MODAL ===== */
+.footer-lp-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:200;justify-content:center;align-items:center}
+.footer-lp-modal.visible{display:flex}
+.footer-lp-modal__inner{background:#fff;border-radius:12px;max-width:600px;width:90%;max-height:80vh;position:relative}
+.footer-lp-modal__close{position:absolute;top:12px;right:12px;background:none;border:none;cursor:pointer}
+.footer-lp-modal__close svg{width:24px;height:24px}
+.footer-lp-modal__scrollbox{overflow-y:auto;max-height:80vh;padding:32px 24px}
+.footer-lp-modal__content em{display:block;font-size:18px;font-weight:700;margin-bottom:16px;font-style:normal}
+.footer-lp-modal__item{font-size:13px;line-height:1.8}
+.footer-lp-modal__item dl{margin-bottom:12px}
+.footer-lp-modal__item dt{margin-bottom:4px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:668px){
+  .fv{padding:32px 16px 24px}
+  .fv__main{font-size:20px}
+  .header__menu--carousel{display:none}
+  .flow__circle{width:44px;height:44px}
+  .flow__arrow{flex:0 0 22px}
+}
+@media(min-width:669px){
+  .fv__main{font-size:32px}
+  .fv__badges{gap:14px}
+  .fv__badge{min-width:100px;padding:10px 14px}
+  .fv__badge-num{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <svg viewBox="0 0 180 36" fill="none" style="height:36px">
+        <rect width="180" height="36" rx="6" fill="#0f3460"/>
+        <text x="10" y="26" font-size="17" font-weight="600" fill="#fff" font-family="Jost,sans-serif">9E</text>
+        <text x="42" y="25" font-size="13" font-weight="600" fill="#fff" font-family="Noto Sans JP,sans-serif">スカウト</text>
+      </svg>
+    </div>
+    <ul class="header__menu">
+      <li class="header__menu--carousel"><a href="/clients/">採用をご検討中の企業様はこちら</a></li>
+    </ul>
+  </div>
+</header>
+<div class="header__trigger"></div>
+
+<div class="c-structure">
+  <div class="c-structure__upper">
+
+    <h1>
+      <!-- 実装時: <picture><source>でSP/PC画像を切替 -->
+      <div class="fv">
+        <p class="fv__sub">専属のエージェントがスカウトを厳選して提案</p>
+        <p class="fv__main">
+          <em>届くのは本気のオファー</em>だけ。<br>
+          そこから<em>年収交渉</em>まで、プロが伴走。
+        </p>
+        <div class="fv__badges">
+          <div class="fv__badge">
+            <span class="fv__badge-num">83<small>%</small></span>
+            <span class="fv__badge-label">年収UP実績</span>
+          </div>
+          <div class="fv__badge">
+            <span class="fv__badge-num">72<small>%</small></span>
+            <span class="fv__badge-label">内定獲得率</span>
+          </div>
+          <div class="fv__badge">
+            <span class="fv__badge-num">4.9</span>
+            <span class="fv__badge-label">Google口コミ</span>
+          </div>
+        </div>
+        <!-- ===== 図解: スカウト選別フロー ===== -->
+        <div class="flow">
+          <div class="flow__row">
+            <div class="flow__node">
+              <div class="flow__circle flow__circle--corp">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.2"><rect x="3" y="7" width="7" height="13" rx="1"/><rect x="14" y="3" width="7" height="17" rx="1"/><line x1="5" y1="10" x2="8" y2="10"/><line x1="5" y1="13" x2="8" y2="13"/><line x1="16" y1="6" x2="19" y2="6"/><line x1="16" y1="9" x2="19" y2="9"/><line x1="16" y1="12" x2="19" y2="12"/></svg>
+              </div>
+              <p class="flow__name">企業</p>
+              <p class="flow__note">スカウト送付</p>
+            </div>
+            <div class="flow__arrow">
+              <svg width="20" height="8" viewBox="0 0 20 8"><path d="M0 4h16" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/><path d="M14 1l4 3-4 3" fill="rgba(255,255,255,.15)"/></svg>
+              <span class="flow__cap flow__cap--muted">大量</span>
+            </div>
+            <div class="flow__node">
+              <div class="flow__circle flow__circle--agent">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="1.3"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/></svg>
+              </div>
+              <p class="flow__name">専属エージェント</p>
+              <p class="flow__note">選別・提案</p>
+            </div>
+            <div class="flow__arrow">
+              <svg width="20" height="8" viewBox="0 0 20 8"><path d="M0 4h16" stroke="#e94560" stroke-width="1.5"/><path d="M14 1l4 3-4 3" fill="#e94560"/></svg>
+              <span class="flow__cap flow__cap--accent">厳選</span>
+            </div>
+            <div class="flow__node">
+              <div class="flow__circle flow__circle--you">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.2"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/></svg>
+              </div>
+              <p class="flow__name">あなた</p>
+              <p class="flow__note">待つだけ</p>
+            </div>
+          </div>
+          <div class="flow__footer">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <span class="flow__footer-text">スカウトの選別も、<em>年収交渉</em>も、プロがやる</span>
+          </div>
+        </div>
+      </div>
+    </h1>
+
+    <!-- ===== 8ステップ カルーセルフォーム ===== -->
+    <div class="karousel">
+      <div class="karousel__gauge"><span id="gauge" style="width:12.5%"></span></div>
+      <p class="karousel__step-info"><span id="stepNum">1</span> / 8</p>
+
+      <!-- STEP 1 -->
+      <div class="item active" id="item1">
+        <fieldset>
+          <p class="item__title">現在のお考えに近いものをご選択ください<span class="haveto">必須</span></p>
+          <span class="wpcf7-form-control-wrap" data-name="your-q1">
+            <span class="wpcf7-form-control wpcf7-radio">
+              <span class="wpcf7-list-item"><label><input type="radio" name="your-q1" value="近いうちに転職したい"><span class="wpcf7-list-item-label">近いうちに転職したい</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="radio" name="your-q1" value="良い話があれば考えたい"><span class="wpcf7-list-item-label">良い話があれば考えたい</span></label></span>
+            </span>
+          </span>
+        </fieldset>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="item" id="item2">
+        <fieldset>
+          <p class="item__title">転職希望時期について教えてください<span class="haveto">必須</span></p>
+          <span class="wpcf7-form-control-wrap" data-name="your-q2">
+            <span class="wpcf7-form-control wpcf7-radio">
+              <span class="wpcf7-list-item"><label><input type="radio" name="your-q2" value="1ヶ月以内"><span class="wpcf7-list-item-label">1ヶ月以内</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="radio" name="your-q2" value="3ヶ月以内"><span class="wpcf7-list-item-label">3ヶ月以内</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="radio" name="your-q2" value="6ヶ月以内"><span class="wpcf7-list-item-label">6ヶ月以内</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="radio" name="your-q2" value="1年以内"><span class="wpcf7-list-item-label">1年以内</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="radio" name="your-q2" value="1年以上先"><span class="wpcf7-list-item-label">1年以上先</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="radio" name="your-q2" value="よいスカウトがあればいつでも"><span class="wpcf7-list-item-label">よいスカウトがあればいつでも</span></label></span>
+            </span>
+          </span>
+        </fieldset>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="item" id="item3">
+        <fieldset>
+          <p class="item__title">転職検討理由について当てはまるもの全てをご選択ください<span class="haveto">必須</span></p>
+          <span class="wpcf7-form-control-wrap" data-name="your-q3">
+            <span class="wpcf7-form-control wpcf7-checkbox free">
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q3[]" value="年収を上げたい"><span class="wpcf7-list-item-label">年収を上げたい</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q3[]" value="ワークライフバランスを整えたい"><span class="wpcf7-list-item-label">ワークライフバランスを整えたい</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q3[]" value="キャリアアップ/新たな営業経験を積みたい"><span class="wpcf7-list-item-label">キャリアアップ/新たな営業経験を積みたい</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q3[]" value="SaaS・IT企業に挑戦したい"><span class="wpcf7-list-item-label">SaaS・IT企業に挑戦したい</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q3[]" value="その他"><span class="wpcf7-list-item-label">その他</span></label></span>
+            </span>
+          </span>
+          <input type="text" class="free__answer-hide" placeholder="自由回答" name="your-q3-free" maxlength="60">
+        </fieldset>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="item" id="item4">
+        <fieldset>
+          <p class="item__title">これまでのご経験について当てはまるもの全てをご選択ください<span class="haveto">必須</span></p>
+          <span class="wpcf7-form-control-wrap" data-name="your-q4">
+            <span class="wpcf7-form-control wpcf7-checkbox free">
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q4[]" value="法人営業（SaaS/IT）"><span class="wpcf7-list-item-label">法人営業（SaaS/IT）</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q4[]" value="法人営業（その他）"><span class="wpcf7-list-item-label">法人営業（その他）</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q4[]" value="個人営業経験"><span class="wpcf7-list-item-label">個人営業経験</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q4[]" value="カスタマーサクセス/IS"><span class="wpcf7-list-item-label">カスタマーサクセス/インサイドセールス</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q4[]" value="キャリアアドバイザー経験"><span class="wpcf7-list-item-label">キャリアアドバイザー経験</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q4[]" value="接客販売経験"><span class="wpcf7-list-item-label">接客販売経験</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="checkbox" name="your-q4[]" value="その他"><span class="wpcf7-list-item-label">その他</span></label></span>
+            </span>
+          </span>
+          <input type="text" class="free__answer-hide" placeholder="自由回答" name="your-q4-free" maxlength="60">
+        </fieldset>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="item" id="item5">
+        <fieldset>
+          <p class="item__title">現年収について教えてください<span class="haveto">必須</span></p>
+          <div class="item__flex">
+            <input type="text" class="number" id="income" placeholder="半角数字" inputmode="numeric" name="your-salary1" maxlength="8">
+            <span>万円</span>
+          </div>
+          <p class="item__title">希望年収について教えてください<span class="haveto">必須</span></p>
+          <div class="item__flex">
+            <input type="text" class="number" id="income2" placeholder="半角数字" inputmode="numeric" name="your-salary2" maxlength="8">
+            <span>万円</span>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- STEP 6 -->
+      <div class="item" id="item6">
+        <fieldset>
+          <p class="item__title">就業希望エリアについて教えてください<span class="haveto">必須</span></p>
+          <input type="text" class="text text_edge" placeholder="東京都/首都圏/リモート希望 など" name="your-area" maxlength="30">
+        </fieldset>
+      </div>
+
+      <!-- STEP 7 -->
+      <div class="item item__name" id="item7">
+        <fieldset>
+          <p class="item__title">お名前とふりがなを教えてください<span class="haveto">必須</span></p>
+          <div class="item__flex">
+            <input type="text" class="name" id="familyname" placeholder="姓" name="your-familyname" minlength="1" maxlength="400">
+            <input type="text" class="name" id="firstname" placeholder="名" name="your-firstname" minlength="1" maxlength="400">
+          </div>
+          <div class="item__flex">
+            <input type="text" class="name" id="familynamekana" placeholder="せい" name="your-familynamekana" minlength="1" maxlength="400">
+            <input type="text" class="name" id="firstnamekana" placeholder="めい" name="your-firstnamekana" minlength="1" maxlength="400">
+          </div>
+          <br>
+          <p class="item__title">生まれ年<span class="haveto">必須</span></p>
+          <div class="item__flex">
+            <input type="text" class="number" id="birthyear" placeholder="西暦" name="your-birthyear" inputmode="numeric" maxlength="4">
+            <span>年生まれ</span>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- STEP 8 -->
+      <div class="item" id="item8">
+        <fieldset>
+          <p class="item__title">電話番号<span class="haveto">必須</span></p>
+          <input type="tel" class="tel text_edge" id="tel" placeholder="ハイフンなし" name="your-tel" maxlength="11">
+          <br><br>
+          <p class="item__title">メールアドレス<span class="haveto">必須</span></p>
+          <input type="email" class="tel text_edge" id="email" name="your-email" maxlength="400">
+        </fieldset>
+      </div>
+
+      <!-- NAV -->
+      <div class="owl-nav-alt">
+        <div class="owl-prev" id="prevBtn">&lt;&nbsp;戻る</div>
+        <div class="owl-next" id="nextBtn">次へ</div>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="submit-btn" id="submitBtn">
+        <div class="submit-btn__inner submit-btn--effect">
+          <button id="submit" type="button">スカウトを受け取る（無料）</button>
+        </div>
+        <p class="submit-btn__note">個人情報は厳重に管理されます｜厚生労働大臣許可 13-ユ-312336</p>
+      </div>
+
+      <!-- HIDDEN -->
+      <div style="display:none">
+        <input type="hidden" name="shiboshokushu[]" value="営業職（スカウト経由）" checked>
+        <input type="hidden" name="hikiaikeiro" value="自社">
+        <input type="hidden" name="listingkeyword" value="">
+        <input type="hidden" name="campaignid" value="">
+        <input type="hidden" name="adgroupid" value="">
+        <input type="hidden" name="targetid" value="">
+        <input type="hidden" name="gclid" value="">
+      </div>
+
+    </div><!-- /karousel -->
+  </div><!-- /c-structure__upper -->
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer-lp">
+    <div class="footer-lp-modal" id="modal-about">
+      <div class="footer-lp-modal__inner">
+        <button class="footer-lp-modal__close" id="modal-close-about"><svg viewBox="0 0 48 48" fill="#5F6368"><path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"/></svg></button>
+        <div class="footer-lp-modal__scrollbox">
+          <div class="footer-lp-modal__content">
+            <em>会社概要</em>
+            <div class="footer-lp-modal__item">
+              <dl><dt><b>会社名</b></dt><dd>株式会社9E</dd></dl>
+              <dl><dt><b>HP</b></dt><dd>https://9e-hs.co.jp/</dd></dl>
+              <dl><dt><b>設立</b></dt><dd>2020年4月24日</dd></dl>
+              <dl><dt><b>本社</b></dt><dd>〒160-0023<br>東京都新宿区西新宿7-4-4 武蔵ビル2F-B号室</dd></dl>
+              <dl><dt><b>代表取締役</b></dt><dd>大日向 佑介</dd></dl>
+              <dl><dt><b>事業内容</b></dt><dd>人材紹介事業・採用代行事業</dd></dl>
+              <dl><dt><b>許可番号</b></dt><dd>厚生労働大臣許可 13-ユ-312336</dd></dl>
+              <dl><dt><b>問い合わせ先</b></dt><dd>9e-career@9e-hs.co.jp</dd></dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-lp-modal" id="modal-privacy">
+      <div class="footer-lp-modal__inner">
+        <button class="footer-lp-modal__close" id="modal-close-privacy"><svg viewBox="0 0 48 48" fill="#5F6368"><path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"/></svg></button>
+        <div class="footer-lp-modal__scrollbox">
+          <div class="footer-lp-modal__content">
+            <em>プライバシーポリシー</em>
+            <div class="footer-lp-modal__item">
+              <p>株式会社9E（以下「当社」といいます。）は、当社が提供する各種サービスにおいて取得する個人情報を適切に取り扱うため、以下のとおりプライバシーポリシーを定めます。</p>
+              <dl><dt><b>1. 取得する情報</b></dt><dd>氏名、メールアドレス、電話番号、住所等の連絡先情報、学歴、職務経歴、資格、スキル、希望条件等のキャリア関連情報、利用履歴、端末情報等。</dd></dl>
+              <dl><dt><b>2. 利用目的</b></dt><dd>本サービスの提供・運営、本人確認、品質向上、お問い合わせ対応、サービス案内等。</dd></dl>
+              <dl><dt><b>3. 第三者提供</b></dt><dd>ご本人の同意がある場合、法令に基づく場合等を除き、個人情報を第三者に提供しません。</dd></dl>
+              <dl><dt><b>4. 安全管理</b></dt><dd>個人情報の漏えい・滅失・き損の防止のため、必要かつ適切な措置を講じます。</dd></dl>
+              <dl><dt><b>5. お問い合わせ</b></dt><dd>9e-career@9e-hs.co.jp</dd></dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-lp-modal" id="modal-terms">
+      <div class="footer-lp-modal__inner">
+        <button class="footer-lp-modal__close" id="modal-close-terms"><svg viewBox="0 0 48 48" fill="#5F6368"><path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"/></svg></button>
+        <div class="footer-lp-modal__scrollbox">
+          <div class="footer-lp-modal__content">
+            <em>利用規約</em>
+            <div class="footer-lp-modal__item">
+              <p>本サービスの利用規約は、既存LPと同一の内容を適用します。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer-lp-bottom">
+      <div class="footer-lp-bottom__inner">
+        <div class="footer-lp-bottom__links">
+          <button id="modal-link-about">会社概要</button>
+          <button id="modal-link-privacy">プライバシーポリシー</button>
+          <button id="modal-link-terms">利用規約</button>
+        </div>
+        <p class="footer-lp-bottom__authority">厚生労働大臣 許可番号 13-ユ-312336</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script>
+var totalSteps=8,slideNum=1;
+
+function updateUI(){
+  for(var i=1;i<=totalSteps;i++){
+    var el=document.getElementById('item'+i);
+    if(el)el.classList.toggle('active',i===slideNum);
+  }
+  document.getElementById('gauge').style.width=(slideNum/totalSteps*100)+'%';
+  document.getElementById('stepNum').textContent=slideNum;
+  document.getElementById('prevBtn').style.display=slideNum>1?'block':'none';
+  if(slideNum<totalSteps){
+    document.getElementById('nextBtn').style.display='block';
+    document.getElementById('submitBtn').style.display='none';
+  }else{
+    document.getElementById('nextBtn').style.display='none';
+    document.getElementById('submitBtn').style.display='block';
+  }
+}
+
+// ラジオ選択で自動遷移
+document.querySelectorAll('input[type="radio"]').forEach(function(r){
+  r.addEventListener('click',function(){
+    setTimeout(function(){if(slideNum<totalSteps){slideNum++;updateUI()}},300);
+  });
+});
+
+// チェックボックスの「その他」で自由回答表示
+document.querySelectorAll('.wpcf7-checkbox.free input[type="checkbox"]').forEach(function(cb){
+  cb.addEventListener('change',function(){
+    if(this.value==='その他'){
+      var free=this.closest('fieldset').querySelector('.free__answer-hide');
+      if(free)free.style.display=this.checked?'block':'none';
+    }
+  });
+});
+
+document.getElementById('nextBtn').addEventListener('click',function(){
+  if(slideNum<totalSteps){slideNum++;updateUI()}
+});
+document.getElementById('prevBtn').addEventListener('click',function(){
+  if(slideNum>1){slideNum--;updateUI()}
+});
+
+// 送信
+document.getElementById('submit').addEventListener('click',function(){
+  var name=document.getElementById('familyname').value+document.getElementById('firstname').value,
+      tel=document.getElementById('tel').value,
+      email=document.getElementById('email').value,
+      job='営業職（スカウト経由）',
+      birthday=document.getElementById('birthyear').value,
+      q1=document.querySelector('input[name="your-q1"]:checked'),
+      q2=document.querySelector('input[name="your-q2"]:checked'),
+      income=document.getElementById('income').value;
+  var thought=q1?q1.value:'',time=q2?q2.value:'';
+  // 実装時: CF7のwpcf7mailsentイベントでリダイレクト
+  // location='https://ca-agent.com/thanks-lp/?yourname='+name+'&tel='+tel+'&email='+email+'&job='+encodeURIComponent(job)+'&birthday='+birthday+'&thought='+encodeURIComponent(thought)+'&time='+encodeURIComponent(time)+'&income='+income;
+  alert('送信完了（プレビュー）\n\n'+name+' / '+tel+' / '+email);
+});
+
+// モーダル
+['about','privacy','terms'].forEach(function(t){
+  var link=document.getElementById('modal-link-'+t),
+      modal=document.getElementById('modal-'+t),
+      close=document.getElementById('modal-close-'+t);
+  if(link&&modal&&close){
+    link.addEventListener('click',function(e){e.preventDefault();modal.classList.add('visible')});
+    close.addEventListener('click',function(){modal.classList.remove('visible')});
+    modal.addEventListener('click',function(e){if(e.target===modal)modal.classList.remove('visible')});
+  }
+});
+
+updateUI();
+</script>
+
+</body>
+</html>
