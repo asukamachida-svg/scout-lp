@@ -14,75 +14,96 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Noto Sans JP',sans-serif;color:#1a1a2e;background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{font-family:'Noto Sans JP',sans-serif;color:#0f172a;background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 
 /* ===== HEADER ===== */
-.header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e8e8}
+.header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e2e8f0}
 .header__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
 .header__logo img{height:36px;width:auto}
 .header__menu{list-style:none}
-.header__menu--carousel a{font-size:13px;color:#333;border:1px solid #ccc;border-radius:4px;padding:6px 14px}
+.header__menu--carousel a{font-size:13px;color:#334155;border:1px solid #cbd5e1;border-radius:4px;padding:6px 14px}
 
 /* ===== FV ===== */
 .c-structure{position:relative}
 .c-structure__upper{position:relative}
 .c-structure__upper h1{display:block}
-.fv{background:linear-gradient(135deg,#0f3460 0%,#16213e 100%);color:#fff;padding:40px 20px 24px;text-align:center}
-.fv__sub{font-size:12px;font-weight:500;color:rgba(255,255,255,.65);letter-spacing:.08em;margin-bottom:10px}
-.fv__main{font-size:24px;font-weight:900;line-height:1.5;margin-bottom:8px}
+.fv{background:linear-gradient(180deg,#f1f5f9 0%,#fff 100%);color:#0f172a;padding:56px 20px 40px}
+.fv__grid{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:48px}
+.fv__left{flex:1;min-width:0}
+.fv__right{flex:0 0 300px}
+.fv__sub{font-size:13px;font-weight:600;color:#64748b;letter-spacing:.06em;margin-bottom:10px}
+.fv__main{font-size:24px;font-weight:900;line-height:1.5;margin-bottom:18px;color:#0f172a}
 .fv__main em{font-style:normal;color:#e94560}
-.fv__copy{font-size:13px;font-weight:500;color:rgba(255,255,255,.8);margin-bottom:20px;line-height:1.7}
-.fv__badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.fv__badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:8px 10px;text-align:center;min-width:76px}
-.fv__badge-num{font-family:'Jost',sans-serif;font-size:22px;font-weight:600;color:#e94560;display:block;line-height:1.2}
-.fv__badge-num small{font-size:13px}
-.fv__badge-label{font-size:9px;color:rgba(255,255,255,.6);display:block;margin-top:2px}
+.fv__badges{display:flex;gap:10px;flex-wrap:wrap}
+.fv__badge{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 12px;text-align:center;min-width:80px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.fv__badge-num{font-family:'Jost',sans-serif;font-size:24px;font-weight:600;color:#e94560;display:block;line-height:1.2}
+.fv__badge-num small{font-size:14px}
+.fv__badge-label{font-size:10px;color:#64748b;display:block;margin-top:3px;font-weight:500}
 
-/* ===== FLOW DIAGRAM ===== */
-.flow{max-width:400px;margin:32px auto 0;padding:0 12px}
-.flow__row{display:flex;align-items:center;gap:0}
-.flow__node{flex:1;text-align:center}
-.flow__circle{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 6px}
-.flow__circle--corp{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12)}
-.flow__circle--agent{background:rgba(233,69,96,.1);border:2px solid #e94560;box-shadow:0 0 16px rgba(233,69,96,.2)}
-.flow__circle--you{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12)}
-.flow__name{font-size:10px;font-weight:700;color:#fff;margin-bottom:1px}
-.flow__note{font-size:8px;color:rgba(255,255,255,.4);line-height:1.3}
-.flow__arrow{flex:0 0 28px;text-align:center;padding-bottom:24px}
+/* ===== FLOW DIAGRAM (vertical / light) ===== */
+.flow{padding:4px 0}
+.flow__col{display:flex;flex-direction:column;align-items:center}
+
+/* 企業群 */
+.flow__corp-group{display:flex;gap:8px;margin-bottom:6px}
+.flow__corp-dot{width:40px;height:40px;border-radius:50%;background:#e2e8f0;display:flex;align-items:center;justify-content:center}
+.flow__corp-label{font-size:11px;font-weight:600;color:#64748b;text-align:center}
+
+/* ファネル */
+.flow__funnel{padding:4px 0;text-align:center}
+.flow__funnel svg{display:block;margin:0 auto}
+.flow__funnel-label{font-size:10px;font-weight:700;color:#94a3b8;margin-top:2px}
+
+/* エージェントカード */
+.flow__agent-card{position:relative;background:#fff;border:2px solid #e94560;border-radius:16px;padding:16px 24px 14px;text-align:center;max-width:200px;box-shadow:0 4px 20px rgba(233,69,96,.12),0 1px 3px rgba(0,0,0,.06)}
+.flow__agent-icon{width:52px;height:52px;border-radius:50%;background:#fef2f2;border:2px solid #e94560;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
+.flow__agent-title{font-size:14px;font-weight:700;color:#e94560;margin-bottom:2px}
+.flow__agent-desc{font-size:11px;color:#64748b;font-weight:500}
+
+/* 厳選矢印 */
+.flow__arrow{padding:4px 0;text-align:center}
 .flow__arrow svg{display:block;margin:0 auto}
-.flow__cap{display:block;font-size:7px;font-weight:700;letter-spacing:.03em;margin-top:3px}
-.flow__cap--muted{color:rgba(255,255,255,.25)}
-.flow__cap--accent{color:#e94560}
-.flow__footer{margin-top:12px;padding:6px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;gap:6px}
-.flow__footer-text{font-size:9px;font-weight:600;color:rgba(255,255,255,.5)}.flow__footer-text em{font-style:normal;color:#e94560}
+.flow__arrow-label{font-size:10px;font-weight:700;color:#e94560;margin-top:2px}
+
+/* あなた */
+.flow__you{text-align:center}
+.flow__you-circle{width:44px;height:44px;border-radius:50%;background:#f0fdf4;border:2px solid #22c55e;display:flex;align-items:center;justify-content:center;margin:0 auto 4px}
+.flow__you-name{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:1px}
+.flow__you-note{font-size:10px;color:#64748b;font-weight:500}
+
+/* FV CTA */
+.fv__cta{max-width:960px;margin:36px auto 0;text-align:center}
+.fv__cta-text{font-size:22px;font-weight:900;color:#0f172a}
+.fv__cta-text em{font-style:normal;color:#e94560}
+.fv__cta-sub{font-size:12px;color:#94a3b8;margin-top:6px;font-weight:500}
 
 /* ===== FORM ===== */
-.karousel{max-width:520px;margin:-20px auto 0;padding:0 20px;position:relative;z-index:10}
-.karousel__gauge{height:6px;background:#e8e8e8;border-radius:3px;margin-bottom:12px;overflow:hidden}
+.karousel{max-width:520px;margin:24px auto 0;padding:0 20px;position:relative;z-index:10}
+.karousel__gauge{height:6px;background:#e2e8f0;border-radius:3px;margin-bottom:12px;overflow:hidden}
 .karousel__gauge span{display:block;height:100%;background:linear-gradient(90deg,#0f3460,#e94560);border-radius:3px;transition:width .4s ease-out}
-.karousel__step-info{text-align:center;font-size:12px;color:#888;margin-bottom:16px}
+.karousel__step-info{text-align:center;font-size:12px;color:#94a3b8;margin-bottom:16px}
 .item{display:none;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:28px 24px;min-height:280px}
 .item.active{display:block}
-.item__title{font-size:15px;font-weight:700;color:#16213e;margin-bottom:16px;line-height:1.6}
+.item__title{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:16px;line-height:1.6}
 .haveto{display:inline-block;background:#e94560;color:#fff;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
 .wpcf7-list-item{display:block;margin-bottom:8px}
-.wpcf7-list-item label{display:block;background:#f8f9fa;border:2px solid #e8e8e8;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s,background .2s}
+.wpcf7-list-item label{display:block;background:#f8fafc;border:2px solid #e2e8f0;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s,background .2s}
 .wpcf7-list-item label:hover{border-color:#0f3460;background:#f0f4ff}
 .wpcf7-list-item label.selected{border-color:#0f3460;background:#eef2ff}
 .wpcf7-list-item input[type="radio"],.wpcf7-list-item input[type="checkbox"]{margin-right:8px;accent-color:#0f3460}
 .free__answer-hide{display:none}
 .item__flex{display:flex;gap:8px;align-items:center;margin-bottom:12px}
 .item__flex span:last-child{font-size:14px;font-weight:500;white-space:nowrap}
-input[type="text"],input[type="tel"],input[type="email"],input[type="number"]{width:100%;border:2px solid #e8e8e8;border-radius:8px;padding:12px 14px;font-size:15px;font-family:inherit;transition:border-color .2s;outline:none}
+input[type="text"],input[type="tel"],input[type="email"],input[type="number"]{width:100%;border:2px solid #e2e8f0;border-radius:8px;padding:12px 14px;font-size:15px;font-family:inherit;transition:border-color .2s;outline:none}
 input:focus{border-color:#0f3460}
 .name,.number,.text,.text_edge,.tel{width:100%}
 
 /* ===== NAV ===== */
 .owl-nav-alt{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
-.owl-prev{background:none;border:none;color:#888;font-size:14px;cursor:pointer;padding:8px 0;display:none}
-.owl-prev:hover{color:#333}
+.owl-prev{background:none;border:none;color:#94a3b8;font-size:14px;cursor:pointer;padding:8px 0;display:none}
+.owl-prev:hover{color:#334155}
 .owl-next{background:#0f3460;color:#fff;border:none;border-radius:50px;padding:12px 32px;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s;margin-left:auto;display:none}
 .owl-next:hover{background:#1a4a8a}
 
@@ -90,14 +111,14 @@ input:focus{border-color:#0f3460}
 .submit-btn{display:none;text-align:center;margin-top:20px}
 .submit-btn button{width:100%;background:#e94560;color:#fff;border:none;border-radius:50px;padding:16px 24px;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 4px 16px rgba(233,69,96,.3);transition:background .2s,transform .2s}
 .submit-btn button:hover{background:#d63851;transform:translateY(-1px)}
-.submit-btn__note{font-size:10px;color:#999;margin-top:8px}
+.submit-btn__note{font-size:10px;color:#94a3b8;margin-top:8px}
 
 /* ===== FOOTER ===== */
 .footer-lp{margin-top:40px}
-.footer-lp-bottom{text-align:center;padding:24px 20px;border-top:1px solid #e8e8e8}
+.footer-lp-bottom{text-align:center;padding:24px 20px;border-top:1px solid #e2e8f0}
 .footer-lp-bottom__links{margin-bottom:8px}
-.footer-lp-bottom__links button{background:none;border:none;font-size:12px;color:#666;cursor:pointer;margin:0 8px}
-.footer-lp-bottom__authority{font-size:11px;color:#999}
+.footer-lp-bottom__links button{background:none;border:none;font-size:12px;color:#64748b;cursor:pointer;margin:0 8px}
+.footer-lp-bottom__authority{font-size:11px;color:#94a3b8}
 
 /* ===== MODAL ===== */
 .footer-lp-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:200;justify-content:center;align-items:center}
@@ -113,17 +134,25 @@ input:focus{border-color:#0f3460}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:668px){
-  .fv{padding:32px 16px 24px}
+  .fv{padding:36px 16px 28px}
+  .fv__grid{flex-direction:column;gap:24px;text-align:center}
+  .fv__right{flex:none;width:100%;max-width:260px}
   .fv__main{font-size:20px}
+  .fv__badges{justify-content:center}
+  .fv__cta{margin-top:24px}
+  .fv__cta-text{font-size:18px}
   .header__menu--carousel{display:none}
-  .flow__circle{width:44px;height:44px}
-  .flow__arrow{flex:0 0 22px}
+  .flow__corp-dot{width:34px;height:34px}
+  .flow__agent-card{padding:14px 18px 12px;max-width:180px}
+  .flow__agent-icon{width:44px;height:44px}
+  .flow__you-circle{width:38px;height:38px}
 }
 @media(min-width:669px){
-  .fv__main{font-size:32px}
+  .fv__main{font-size:30px}
   .fv__badges{gap:14px}
-  .fv__badge{min-width:100px;padding:10px 14px}
-  .fv__badge-num{font-size:26px}
+  .fv__badge{min-width:100px;padding:12px 14px}
+  .fv__badge-num{font-size:28px}
+  .fv__cta-text{font-size:24px}
 }
 </style>
 </head>
@@ -149,64 +178,87 @@ input:focus{border-color:#0f3460}
   <div class="c-structure__upper">
 
     <h1>
-      <!-- 実装時: <picture><source>でSP/PC画像を切替 -->
       <div class="fv">
-        <p class="fv__sub">専属のエージェントがスカウトを厳選して提案</p>
-        <p class="fv__main">
-          <em>届くのは本気のオファー</em>だけ。<br>
-          そこから<em>年収交渉</em>まで、プロが伴走。
-        </p>
-        <div class="fv__badges">
-          <div class="fv__badge">
-            <span class="fv__badge-num">83<small>%</small></span>
-            <span class="fv__badge-label">年収UP実績</span>
+        <div class="fv__grid">
+          <!-- LEFT: コピー -->
+          <div class="fv__left">
+            <p class="fv__sub">営業職に特化したスカウト型転職サービス</p>
+            <p class="fv__main">
+              <em>届くのは本気のオファー</em>だけ。<br>
+              そこから<em>年収交渉</em>まで、プロが伴走。
+            </p>
+            <div class="fv__badges">
+              <div class="fv__badge">
+                <span class="fv__badge-num">83<small>%</small></span>
+                <span class="fv__badge-label">年収UP実績</span>
+              </div>
+              <div class="fv__badge">
+                <span class="fv__badge-num">72<small>%</small></span>
+                <span class="fv__badge-label">内定獲得率</span>
+              </div>
+              <div class="fv__badge">
+                <span class="fv__badge-num">4.9</span>
+                <span class="fv__badge-label">Google口コミ</span>
+              </div>
+            </div>
           </div>
-          <div class="fv__badge">
-            <span class="fv__badge-num">72<small>%</small></span>
-            <span class="fv__badge-label">内定獲得率</span>
-          </div>
-          <div class="fv__badge">
-            <span class="fv__badge-num">4.9</span>
-            <span class="fv__badge-label">Google口コミ</span>
+          <!-- RIGHT: 構造ビジュアル -->
+          <div class="fv__right">
+            <div class="flow">
+              <div class="flow__col">
+                <!-- 企業群 -->
+                <div class="flow__corp-group">
+                  <div class="flow__corp-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><rect x="3" y="7" width="7" height="13" rx="1"/><rect x="14" y="3" width="7" height="17" rx="1"/><line x1="5" y1="10" x2="8" y2="10"/><line x1="16" y1="6" x2="19" y2="6"/><line x1="16" y1="9" x2="19" y2="9"/></svg></div>
+                  <div class="flow__corp-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><rect x="3" y="7" width="7" height="13" rx="1"/><rect x="14" y="3" width="7" height="17" rx="1"/><line x1="5" y1="10" x2="8" y2="10"/><line x1="16" y1="6" x2="19" y2="6"/><line x1="16" y1="9" x2="19" y2="9"/></svg></div>
+                  <div class="flow__corp-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><rect x="3" y="7" width="7" height="13" rx="1"/><rect x="14" y="3" width="7" height="17" rx="1"/><line x1="5" y1="10" x2="8" y2="10"/><line x1="16" y1="6" x2="19" y2="6"/><line x1="16" y1="9" x2="19" y2="9"/></svg></div>
+                </div>
+                <p class="flow__corp-label">契約企業</p>
+
+                <!-- ファネル -->
+                <div class="flow__funnel">
+                  <svg width="88" height="32" viewBox="0 0 88 32">
+                    <line x1="16" y1="2" x2="44" y2="26" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+                    <line x1="44" y1="2" x2="44" y2="26" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 3"/>
+                    <line x1="72" y1="2" x2="44" y2="26" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+                    <path d="M40 23 L44 31 L48 23" fill="#94a3b8"/>
+                  </svg>
+                  <p class="flow__funnel-label">大量のスカウト</p>
+                </div>
+
+                <!-- エージェントカード -->
+                <div class="flow__agent-card">
+                  <div class="flow__agent-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/></svg>
+                  </div>
+                  <p class="flow__agent-title">専属エージェント</p>
+                  <p class="flow__agent-desc">あなたに合うものだけ選別</p>
+                </div>
+
+                <!-- 厳選矢印 -->
+                <div class="flow__arrow">
+                  <svg width="20" height="32" viewBox="0 0 20 32">
+                    <line x1="10" y1="2" x2="10" y2="24" stroke="#e94560" stroke-width="2.5"/>
+                    <path d="M5 21 L10 30 L15 21" fill="#e94560"/>
+                  </svg>
+                  <p class="flow__arrow-label">厳選して提案</p>
+                </div>
+
+                <!-- あなた -->
+                <div class="flow__you">
+                  <div class="flow__you-circle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                  </div>
+                  <p class="flow__you-name">あなた</p>
+                  <p class="flow__you-note">待つだけでOK</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- ===== 図解: スカウト選別フロー ===== -->
-        <div class="flow">
-          <div class="flow__row">
-            <div class="flow__node">
-              <div class="flow__circle flow__circle--corp">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.2"><rect x="3" y="7" width="7" height="13" rx="1"/><rect x="14" y="3" width="7" height="17" rx="1"/><line x1="5" y1="10" x2="8" y2="10"/><line x1="5" y1="13" x2="8" y2="13"/><line x1="16" y1="6" x2="19" y2="6"/><line x1="16" y1="9" x2="19" y2="9"/><line x1="16" y1="12" x2="19" y2="12"/></svg>
-              </div>
-              <p class="flow__name">企業</p>
-              <p class="flow__note">スカウト送付</p>
-            </div>
-            <div class="flow__arrow">
-              <svg width="20" height="8" viewBox="0 0 20 8"><path d="M0 4h16" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/><path d="M14 1l4 3-4 3" fill="rgba(255,255,255,.15)"/></svg>
-              <span class="flow__cap flow__cap--muted">大量</span>
-            </div>
-            <div class="flow__node">
-              <div class="flow__circle flow__circle--agent">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="1.3"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/></svg>
-              </div>
-              <p class="flow__name">専属エージェント</p>
-              <p class="flow__note">選別・提案</p>
-            </div>
-            <div class="flow__arrow">
-              <svg width="20" height="8" viewBox="0 0 20 8"><path d="M0 4h16" stroke="#e94560" stroke-width="1.5"/><path d="M14 1l4 3-4 3" fill="#e94560"/></svg>
-              <span class="flow__cap flow__cap--accent">厳選</span>
-            </div>
-            <div class="flow__node">
-              <div class="flow__circle flow__circle--you">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.2"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/></svg>
-              </div>
-              <p class="flow__name">あなた</p>
-              <p class="flow__note">待つだけ</p>
-            </div>
-          </div>
-          <div class="flow__footer">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-            <span class="flow__footer-text">スカウトの選別も、<em>年収交渉</em>も、プロがやる</span>
-          </div>
+        <!-- CTA -->
+        <div class="fv__cta">
+          <p class="fv__cta-text">登録したら、<em>あとは待つだけ。</em></p>
+          <p class="fv__cta-sub">完全無料・60秒で登録完了</p>
         </div>
       </div>
     </h1>
@@ -223,7 +275,7 @@ input:focus{border-color:#0f3460}
           <span class="wpcf7-form-control-wrap" data-name="your-q1">
             <span class="wpcf7-form-control wpcf7-radio">
               <span class="wpcf7-list-item"><label><input type="radio" name="your-q1" value="近いうちに転職したい"><span class="wpcf7-list-item-label">近いうちに転職したい</span></label></span>
-              <span class="wpcf7-list-item"><label><input type="radio" name="your-q1" value="良い話があれば考えたい"><span class="wpcf7-list-item-label">良い話があれば考えたい</span></label></span>
+              <span class="wpcf7-list-item"><label><input type="radio" name="your-q1" value="良いスカウトがあれば考えたい"><span class="wpcf7-list-item-label">良いスカウトがあれば考えたい</span></label></span>
             </span>
           </span>
         </fieldset>
@@ -487,8 +539,6 @@ document.getElementById('submit').addEventListener('click',function(){
       q2=document.querySelector('input[name="your-q2"]:checked'),
       income=document.getElementById('income').value;
   var thought=q1?q1.value:'',time=q2?q2.value:'';
-  // 実装時: CF7のwpcf7mailsentイベントでリダイレクト
-  // location='https://ca-agent.com/thanks-lp/?yourname='+name+'&tel='+tel+'&email='+email+'&job='+encodeURIComponent(job)+'&birthday='+birthday+'&thought='+encodeURIComponent(thought)+'&time='+encodeURIComponent(time)+'&income='+income;
   alert('送信完了（プレビュー）\n\n'+name+' / '+tel+' / '+email);
 });
 
